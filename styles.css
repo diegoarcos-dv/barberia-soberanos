@@ -1,0 +1,197 @@
+/* --- RESET Y VARIABLES --- */
+:root {
+    --color-primary: #ff4500; /* Rojo Anaranjado Fuego */
+    --color-gold: #d4af37;    /* Dorado Corona */
+    --color-bg: #000000;      /* Negro Puro */
+    --color-bg-light: #1a1a1a;/* Gris Carbón Oscuro */
+    --color-text: #ffffff;    /* Blanco */
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 { font-family: var(--font-heading); text-transform: uppercase; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* --- HEADER --- */
+.header {
+    background-color: rgba(0, 0, 0, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    border-bottom: 2px solid var(--color-primary);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(26,26,26,0.9));
+}
+
+.header .container { display: flex; justify-content: space-between; align-items: center; }
+
+.logo-container { display: flex; align-items: center; }
+.logo-img { height: 50px; margin-right: 15px; border-radius: 5px; }
+.logo-text { font-size: 1.5rem; font-weight: bold; color: var(--color-gold); letter-spacing: 2px; }
+
+.nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+.nav a:hover { color: var(--color-primary); }
+
+.btn-cita {
+    background-color: var(--color-primary);
+    color: var(--color-text) !important;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.btn-cita:hover { background-color: var(--color-gold); color: var(--color-bg) !important; }
+
+/* --- HERO --- */
+.hero {
+    height: 100vh;
+    /* Usamos el segundo logo como fondo oscuro */
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
+                url('logo2Rafa.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 { font-size: 4rem; margin-bottom: 10px; color: var(--color-gold); }
+.hero p { font-size: 1.5rem; margin-bottom: 30px; }
+
+.btn-main {
+    padding: 12px 30px;
+    background-color: transparent;
+    border: 2px solid var(--color-gold);
+    color: var(--color-gold);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+.btn-main:hover { background-color: var(--color-gold); color: var(--color-bg); }
+
+/* --- SERVICIOS --- */
+.services { padding: 80px 0; background-color: var(--color-bg-light); text-align: center; }
+.services h2, .gallery h2 { font-size: 2.5rem; margin-bottom: 50px; color: var(--color-primary); }
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--color-bg);
+    padding: 30px;
+    border: 1px solid #333;
+    transition: transform 0.3s, border-color 0.3s;
+}
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-primary);
+    box-shadow: 0 5px 15px rgba(255, 69, 0, 0.2);
+}
+.service-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
+.price { font-size: 1.25rem; color: var(--color-primary); font-weight: bold; margin-bottom: 15px; }
+
+/* --- GALERÍA --- */
+.gallery { padding: 80px 0; text-align: center; }
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;       
+    height: 350px;     
+    object-fit: cover; 
+    border-radius: 4px;
+    filter: grayscale(100%);
+    transition: filter 0.3s, transform 0.3s;
+    border: 1px solid #333;
+}
+
+.gallery-grid img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+    border-color: var(--color-gold);
+}
+
+/* --- FOOTER --- */
+footer { background-color: #000; padding: 50px 0 20px; border-top: 3px solid var(--color-primary); }
+.footer-content { display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; margin-bottom: 30px; }
+.footer-section { margin: 10px; }
+.footer-section h4 { color: var(--color-primary); margin-bottom: 15px; }
+.copyright { text-align: center; font-size: 0.8rem; color: #666; border-top: 1px solid #333; padding-top: 20px; }
+
+/* --- BOTÓN MAPA --- */
+.btn-map {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 20px;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-map:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .header .container { flex-direction: column; }
+    .nav { margin-top: 15px; }
+    .gallery-grid img { height: 300px; }
+}
+
+/* --- BOTÓN WHATSAPP (Agregado al final) --- */
+.btn-wsp {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 20px;
+    border: 1px solid #25D366; /* Verde WhatsApp */
+    color: #25D366;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-wsp:hover {
+    background-color: #25D366;
+    color: #000; /* Texto negro al hacer hover */
+    box-shadow: 0 0 10px rgba(37, 211, 102, 0.5); /* Resplandor verde */
+    transform: translateY(-2px);
+}
